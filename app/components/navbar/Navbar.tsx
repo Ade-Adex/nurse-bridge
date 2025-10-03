@@ -1,18 +1,14 @@
 'use client'
+
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { Menu, Burger } from '@mantine/core'
 import logo from '@/public/images/logo.png'
 import Button from '@/app/components/ui/Button'
-
-const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'Services', href: '/services' },
-  { name: 'About us', href: '/about' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Contact us', href: '/contact' },
-]
+import { navLinks } from '@/app/components/navbar/navLinks'
+import '@mantine/core/styles.css'
 
 const Navbar = () => {
   const pathname = usePathname()
@@ -25,7 +21,7 @@ const Navbar = () => {
         <span className="font-bold text-lg text-secondary">Nurse Bridge</span>
       </Link>
 
-      {/* NavLinks */}
+      {/* Desktop NavLinks */}
       <div className="hidden md:flex items-center space-x-6">
         {navLinks.map((link) => {
           const isActive = pathname === link.href
@@ -39,13 +35,7 @@ const Navbar = () => {
             >
               {link.name}
               {isActive && (
-                <span
-                  className="
-                    absolute left-0 -bottom-1 w-full h-[2px] 
-                    bg-primary 
-                    rounded-bl-full rounded-br-full 
-                    "
-                />
+                <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-primary rounded-bl-full rounded-br-full" />
               )}
             </Link>
           )
@@ -55,6 +45,45 @@ const Navbar = () => {
         <Button href="/join" gradient="blueToDark" size="md">
           Join us
         </Button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className="md:hidden">
+        <Menu shadow="md" width={200} position="bottom-end">
+          <Menu.Target>
+            <Burger opened={false} aria-label="Toggle navigation" />
+          </Menu.Target>
+
+          <Menu.Dropdown>
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href
+              return (
+                <Menu.Item key={link.name} component={Link} href={link.href}>
+                  <span
+                    className={`font-medium ${
+                      isActive
+                        ? 'text-primary'
+                        : 'text-secondary hover:text-primary'
+                    }`}
+                  >
+                    {link.name}
+                  </span>
+                </Menu.Item>
+              )
+            })}
+            <Menu.Divider />
+            <Menu.Item>
+              <Button
+                href="/join"
+                gradient="blueToDark"
+                size="sm"
+                className="w-full"
+              >
+                Join us
+              </Button>
+            </Menu.Item>
+          </Menu.Dropdown>
+        </Menu>
       </div>
     </nav>
   )
