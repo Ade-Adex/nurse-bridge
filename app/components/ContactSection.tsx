@@ -30,7 +30,7 @@ const ContactSection = () => {
         </div>
 
         {/* Right: Form */}
-        <div className="bg-white rounded-2xl shadow-md p-8">
+        <div className="bg-white rounded-2xl shadow-md md:p-8">
           <form className="space-y-6">
             <input
               type="text"
