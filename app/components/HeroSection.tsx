@@ -10,7 +10,7 @@ import { ChevronRight } from 'lucide-react'
 const HeroSection = () => {
   return (
     <section className="flex flex-col pt-25">
-      <main className="relative flex flex-col md:flex-row items-center justify-between overflow-hidden pb-20 px-4 md:px-20">
+      <main className="relative flex flex-col lg:flex-row items-center justify-between overflow-hidden pb-20 px-4 md:px-10 lg:px-20">
       {/* Left Content */}
         <div className="flex-1 space-y-6 relative z-10">
           <h1 className="text-3xl md:text-6xl font-bold text-slate-900 leading-snug">
@@ -63,13 +63,13 @@ const HeroSection = () => {
         </div>
 
         {/* Right Image */}
-        <div className="relative mt-10 md:mt-0 flex-shrink-0 z-10">
+        <div className="relative mt-10 lg:mt-0 flex-shrink-0 z-10 w-full lg:w-auto">
           <Image
             src={nurse}
             alt="Nurse"
-            width={330}
-            height={350}
-            className="rounded-xl object-contain"
+            // width={330}
+            // height={350}
+            className="rounded-xl object-contain max-w-[330px] lg:max-w-none lg:h-[500px] lg:w-[400px]"
           />
 
           {/* Left Floating Badge */}

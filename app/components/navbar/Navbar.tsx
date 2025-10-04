@@ -22,7 +22,7 @@ const Navbar = () => {
       </Link>
 
       {/* Desktop NavLinks */}
-      <div className="hidden md:flex items-center space-x-6">
+      <div className="hidden lg:flex items-center space-x-6">
         {navLinks.map((link) => {
           const isActive = pathname === link.href
           return (
@@ -48,7 +48,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <Menu shadow="md" width={200} position="bottom-end">
           <Menu.Target>
             <Burger opened={false} aria-label="Toggle navigation" />

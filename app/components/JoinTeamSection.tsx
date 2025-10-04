@@ -27,7 +27,7 @@ const JoinTeamSection = () => {
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-4">
+      <div className="max-w-6xl mx-auto grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {roles.map((role, index) => (
           <div
             key={index}
