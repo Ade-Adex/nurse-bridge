@@ -1,9 +1,9 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { Menu, Burger } from '@mantine/core'
 import logo from '@/public/images/logo.png'
 import Button from '@/app/components/ui/Button'
@@ -12,6 +12,60 @@ import '@mantine/core/styles.css'
 
 const Navbar = () => {
   const pathname = usePathname()
+  const router = useRouter()
+  const [activeSection, setActiveSection] = useState<string>('home')
+
+  // Smooth scroll handler
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (href.startsWith('#')) {
+      e.preventDefault()
+      const sectionId = href.substring(1)
+
+      if (pathname !== '/') {
+        // If on another page, navigate to home first with hash
+        router.push('/' + href)
+        return
+      }
+
+      const target = document.getElementById(sectionId)
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }
+
+  // Detect which section is in view
+  useEffect(() => {
+    if (pathname !== '/') return // Only run observer on homepage
+
+    const sectionIds = navLinks
+      .filter((link) => link.href.startsWith('#'))
+      .map((link) => link.href.substring(1))
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      {
+        rootMargin: '-50% 0px -50% 0px',
+        threshold: 0,
+      }
+    )
+
+    sectionIds.forEach((id) => {
+      const section = document.getElementById(id)
+      if (section) observer.observe(section)
+    })
+
+    return () => observer.disconnect()
+  }, [pathname])
 
   return (
     <nav className="fixed top-0 left-0 w-full z-40 flex items-center justify-between px-8 md:px-20 py-4 bg-white shadow-sm">
@@ -24,11 +78,16 @@ const Navbar = () => {
       {/* Desktop NavLinks */}
       <div className="hidden lg:flex items-center space-x-6">
         {navLinks.map((link) => {
-          const isActive = pathname === link.href
+          const isActive =
+            pathname === link.href ||
+            (link.href.startsWith('#') &&
+              activeSection === link.href.substring(1))
+
           return (
             <Link
               key={link.name}
-              href={link.href}
+              href={pathname === '/' ? link.href : '/' + link.href}
+              onClick={(e) => handleScroll(e, link.href)}
               className={`relative font-bold text-lg px-3 py-1 transition ${
                 isActive ? 'text-primary' : 'text-secondary hover:text-primary'
               }`}
@@ -55,22 +114,24 @@ const Navbar = () => {
           </Menu.Target>
 
           <Menu.Dropdown>
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href
-              return (
-                <Menu.Item key={link.name} component={Link} href={link.href}>
-                  <span
-                    className={`font-medium ${
-                      isActive
-                        ? 'text-primary'
-                        : 'text-secondary hover:text-primary'
-                    }`}
-                  >
-                    {link.name}
-                  </span>
-                </Menu.Item>
-              )
-            })}
+            {navLinks.map((link) => (
+              <Menu.Item
+                key={link.name}
+                component={Link}
+                href={pathname === '/' ? link.href : '/' + link.href}
+                onClick={(e) => handleScroll(e, link.href)}
+              >
+                <span
+                  className={`font-medium ${
+                    activeSection === link.href.substring(1)
+                      ? 'text-primary'
+                      : 'text-secondary hover:text-primary'
+                  }`}
+                >
+                  {link.name}
+                </span>
+              </Menu.Item>
+            ))}
             <Menu.Divider />
             <Menu.Item>
               <Button
