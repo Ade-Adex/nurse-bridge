@@ -72,7 +72,7 @@ const Navbar = () => {
       {/* Logo */}
       <Link href="/" className="flex items-center space-x-2">
         <Image src={logo} alt="Nurse Bridge Logo" width={50} height={50} />
-        <span className="font-bold text-lg text-secondary">Nurse Bridge</span>
+        <span className="font-bold text-lg text-secondary">NurseBridge NG</span>
       </Link>
 
       {/* Desktop NavLinks */}
@@ -101,9 +101,17 @@ const Navbar = () => {
         })}
 
         {/* Join Button */}
-        <Button href="/join" gradient="blueToDark" size="md">
+        {/* <Button href="/join" gradient="blueToDark" size="md">
           Join us
-        </Button>
+        </Button> */}
+        <a
+          href="https://wa.me/2348131952085"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-white rounded-md shadow-lg hover:scale-105 transition-transform duration-300 font-medium bg-gradient-to-r from-[#0A59A8] to-[#042749] px-3 py-1 text-sm md:px-5 md:py-2 md:text-base"
+        >
+          Join us
+        </a>
       </div>
 
       {/* Mobile Menu */}
@@ -134,14 +142,22 @@ const Navbar = () => {
             ))}
             <Menu.Divider />
             <Menu.Item>
-              <Button
+              {/* <Button
                 href="/join"
                 gradient="blueToDark"
                 size="sm"
                 className="w-full"
               >
                 Join us
-              </Button>
+              </Button> */}
+              <a
+                href="https://wa.me/2348131952085"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-white rounded-md shadow-lg hover:scale-105 transition-transform duration-300 font-medium bg-gradient-to-r from-[#0A59A8] to-[#042749] px-3 py-1 text-sm md:px-5 md:py-2 md:text-base"
+              >
+                Join us
+              </a>
             </Menu.Item>
           </Menu.Dropdown>
         </Menu>

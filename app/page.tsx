@@ -38,6 +38,29 @@ export default function Home() {
         <TestimonialsSection />
       </section>
 
+      {/* 🌟 Anticipate Section */}
+      <section
+        id="anticipate"
+        className="py-20 px-6 md:px-12 bg-[var(--bg-section-background)] text-center"
+      >
+        <div className="max-w-3xl mx-auto space-y-4">
+          <h2 className="text-2xl md:text-3xl font-bold">
+            Anticipate the <span className="text-primary">NurseBridge App</span>
+          </h2>
+          <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+            Your trusted link to verified{' '}
+            <span className="font-semibold text-primary">nurses</span>,
+            <span className="font-semibold"> caregivers</span>, and{' '}
+            <span className="font-semibold text-primary">helpers</span>. We’re
+            building a seamless bridge between compassionate professionals and
+            the people who need them most.
+          </p>
+          <p className="text-gray-500 italic text-sm md:text-base">
+            Coming soon — stay tuned for updates!
+          </p>
+        </div>
+      </section>
+
       <section id="contact">
         <ContactSection />
       </section>

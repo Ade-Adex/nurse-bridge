@@ -45,10 +45,10 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4">
-            <button className="flex items-center justify-center space-x-1 border border-white py-3 px-4 rounded-lg hover:bg-white hover:text-primary transition text-sm w-full">
+            {/* <button className="flex items-center justify-center space-x-1 border border-white py-3 px-4 rounded-lg hover:bg-white hover:text-primary transition text-sm w-full">
               <Send className="w-5 h-5" />
               <span>Book Care Services</span>
-            </button>
+            </button> */}
             <a
               href="https://wa.me/2348131952085"
               target="_blank"

@@ -1,5 +1,6 @@
 import React from 'react'
 import Image1 from '@/public/images/Nursebridge  1.png'
+import Image2 from '@/public/images/testi.webp'
 import Image from 'next/image'
 
 const testimonials = [
@@ -7,7 +8,7 @@ const testimonials = [
     quote:
       'NurseBridge has been serving us for over a year, and I couldn’t be more satisfied. The caregivers they provide are courteous, compassionate, and deliver excellent service.',
     name: 'Mr Niyi Micheal',
-    picture: Image1,
+    picture: Image2,
   },
   {
     quote:

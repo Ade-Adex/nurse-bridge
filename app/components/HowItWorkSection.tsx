@@ -29,7 +29,8 @@ const HowItWorkSection = () => {
       {/* Heading */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-secondary">
-          How <span className="text-primary">NurseBridge</span> Works
+          How the <span className="text-primary">NurseBridge</span> App
+          Works
         </h2>
         <p className="mt-3 text-lg text-secondary font-semibold">
           Your <span className="text-primary">health</span> in just{' '}

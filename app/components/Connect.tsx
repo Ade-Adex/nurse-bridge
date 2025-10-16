@@ -111,14 +111,23 @@ const Connect = () => {
 
           {/* Button */}
           <div className="flex mt-auto">
-            <Button
+            {/* <Button
               href="/join"
               gradient="blueToDark"
               size="md"
               className="w-full text-center"
             >
               Book Now
-            </Button>
+            </Button> */}
+
+            <a
+              href="https://wa.me/2348131952085"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full justify-center text-white rounded-md shadow-lg hover:scale-105 transition-transform duration-300 font-medium bg-gradient-to-r from-[#0A59A8] to-[#042749] px-3 py-1 text-sm md:px-5 md:py-2 md:text-base"
+            >
+              Book Now
+            </a>
           </div>
         </div>
       </div>

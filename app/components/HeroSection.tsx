@@ -6,12 +6,11 @@ import vector from '@/public/images/Vector.png'
 import Connect from '@/app/components/Connect'
 import { ChevronRight } from 'lucide-react'
 
-
 const HeroSection = () => {
   return (
     <section className="flex flex-col pt-25">
       <main className="relative flex flex-col lg:flex-row items-center justify-between overflow-hidden pb-20 px-4 md:px-10 lg:px-20">
-      {/* Left Content */}
+        {/* Left Content */}
         <div className="flex-1 space-y-6 relative z-10">
           <h1 className="text-3xl md:text-6xl font-bold text-slate-900 leading-snug">
             Discover Top Care <br />
@@ -57,9 +56,15 @@ const HeroSection = () => {
           </div>
 
           {/* CTA Button */}
-          <button className="text-white py-2 px-6 rounded-md shadow-lg hover:scale-105 transition-transform duration-300 font-bold bg-gradient-to-r from-[#042749] to-[#0A59A8] flex items-center gap-x-2">
-            BOOK CARE SERVICES <ChevronRight strokeWidth={4} className="w-4 h-4" />
-          </button>
+          <a
+            href="https://wa.me/2348131952085"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white py-2 px-6 rounded-md shadow-lg hover:scale-105 transition-transform duration-300 font-bold bg-gradient-to-r from-[#042749] to-[#0A59A8] inline-flex items-center gap-x-2"
+          >
+            BOOK CARE SERVICES{' '}
+            <ChevronRight strokeWidth={4} className="w-4 h-4" />
+          </a>
         </div>
 
         {/* Right Image */}
@@ -88,14 +93,12 @@ const HeroSection = () => {
             className="object-contain object-left w-full h-8 absolute -top-5 left-5"
           />
           <span className="text-sm text-tertiary">
-            Lorem ipsum dolor sit amet, ligula ego. consectetuer adipiscing elit
-            doloras.
+            Your trusted link to verified nurses, caregivers, and helpers.
           </span>
         </div>
       </main>
 
       <div className="w-full relative pt-20 pb-10">
-        
         {/* Connect Section */}
         <Connect />
       </div>
