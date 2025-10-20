@@ -1,6 +1,6 @@
 import React from 'react'
 import Image1 from '@/public/images/Nursebridge  1.png'
-import Image2 from '@/public/images/testi.webp'
+import Image2 from '@/public/images/profile.jpg'
 import Image from 'next/image'
 
 const testimonials = [

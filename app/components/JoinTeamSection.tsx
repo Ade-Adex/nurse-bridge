@@ -23,7 +23,17 @@ const JoinTeamSection = () => {
         <p className="mt-3 text-lg text-secondary font-semibold">
           Are you a{' '}
           <span className="text-primary">Nurse, Midwife, Caregiver</span> or a{' '}
-          <span className="text-primary">Domestic Help</span>
+          <span className="text-primary">Domestic Help?</span>
+          <br />
+          <span className="">
+            Be part of a growing network that values compassion,
+            professionalism, and integrity.
+          </span>
+          <br />
+          <span>
+            Get connected to trusted families and clients who need your service
+            today!
+          </span>
         </p>
       </div>
 
@@ -38,7 +48,9 @@ const JoinTeamSection = () => {
               alt={role.title}
               className="object-cover mb-4 w-full"
             />
-            <h3 className="text-lg font-semibold text-slate-900">{role.title}</h3>
+            <h3 className="text-lg font-semibold text-slate-900">
+              {role.title}
+            </h3>
 
             {/* Social Icons */}
             <div className="flex space-x-4 text-primary pb-6">
