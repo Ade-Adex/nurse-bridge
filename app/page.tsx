@@ -48,7 +48,7 @@ export default function Home() {
             Anticipate the <span className="text-primary">NurseBridge App</span>
           </h2>
           <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-            Your trusted link to verified{' '}
+            Your trusted link to verified
             <span className="font-semibold text-primary">nurses</span>,
             <span className="font-semibold"> caregivers</span>, and{' '}
             <span className="font-semibold text-primary">helpers</span>. We’re
