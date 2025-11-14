@@ -40,7 +40,7 @@ export async function POST(req: Request) {
     // ✅ Send email through Resend
     const response = await resend.emails.send({
       from: process.env.RESEND_SENDER || 'onboarding@resend.dev',
-      to: process.env.RESEND_RECIPIENT || '', 
+      to: process.env.RESEND_RECIPIENT || 'nursebridgeng@gmail.com',
       subject: `New Contact Message from ${firstName} ${lastName}`,
       html: emailTemplate,
     })
