@@ -48,7 +48,7 @@ const JoinTeamSection = () => {
               alt={role.title}
               className="object-cover mb-4 w-full"
             />
-            <h3 className="text-lg font-semibold text-slate-900">
+            <h3 className="text-lg font-semibold text-slate-900 mb-2">
               {role.title}
             </h3>
 
