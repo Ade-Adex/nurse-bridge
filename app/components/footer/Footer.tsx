@@ -115,7 +115,12 @@ const Footer = () => {
           <ul className="flex flex-col gap-y-3 text-sm">
             <li className="flex items-center gap-x-2">
               <Phone size={20} />
-              <span>+234-8131952085</span>
+              <a
+                href="tel:+2348131952085"
+                className="flex items-center gap-2 hover:text-blue-400 transition-colors duration-300"
+              >
+                <span>+23408131952085</span>
+              </a>
             </li>
             <li className="flex items-center gap-x-2">
               <MapPin size={20} />
@@ -123,7 +128,12 @@ const Footer = () => {
             </li>
             <li className="flex items-center gap-x-2">
               <Mail size={24} />
-              <span>Support@nursebridgeng.com</span>
+              <a
+                href="mailto:support@nursebridgeng.com"
+                className="flex items-center gap-2 hover:text-blue-400 transition-colors duration-300"
+              >
+                <span>Support@nursebridgeng.com</span>
+              </a>
             </li>
           </ul>
 
